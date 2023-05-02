@@ -1,5 +1,16 @@
 from User import User
 from UserInteraction import UserInteraction
+from DatabaseHandler import *
+
+
+
+    
+
+
+
+
+
+
 
 
 user1 = User("John Smith", "01.01.1999", "12 34 56 78", "smith@mymail.com")
@@ -14,6 +25,9 @@ for user in users:
     print(user)
 
 
+DATABASE_NAME = "mytestdatabase"
+TABLE_NAME = "users"
+
 
 done = False
 while not done:
@@ -24,8 +38,7 @@ while not done:
         range(1,5):
         print("was valid")
         if int(selected_operation) == 1:
-            # Retrieve all users from database
-            for user in users:
+            for user in get_all_rows_from_database(TABLE_NAME):
                 print(user)
         elif int(selected_operation) == 2:
             # Create a new user and register in database if possible

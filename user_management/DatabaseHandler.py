@@ -1,6 +1,6 @@
 import mysql.connector
 
-from user_management.User import User
+from User import User
 
 def create_database(database_name):
     mycursor.execute("CREATE DATABASE " + database_name)
@@ -35,7 +35,10 @@ def create_table(table_name, column_names, column_value_types):
     sql = sql[:-2] + ")"
     mycursor.execute(sql)
 
-
+def get_all_rows_from_database(table_name):
+    mycursor.execute("SELECT * FROM " + table_name)
+    users = mycursor.fetchall()
+    return users
 
 
 
@@ -67,7 +70,7 @@ DATABASE_TYPE_VARCHAR = "VARCHAR(255)"
 column_value_types = ["INT AUTO_INCREMENT PRIMARY KEY", 
                       DATABASE_TYPE_VARCHAR, DATABASE_TYPE_VARCHAR, 
                       DATABASE_TYPE_VARCHAR, DATABASE_TYPE_VARCHAR]
-create_table(table_name, column_names, column_value_types)
+#create_table(table_name, column_names, column_value_types)
 
 user1 = User("John Smith", "01.01.1999", "12 34 56 78", "smith@mymail.com")
 names = ["name", "date_of_birth", "phone_number", "email_address"]
