@@ -21,10 +21,17 @@ def perform_selected_operation(selected_operation):
         for user in get_all_rows_from_database(TABLE_NAME):
             print(user)
     elif int(selected_operation) == 2:
+        # TODO: Ask user to create new user in CLI with UserInteraction
         register_user_in_the_database(user2)
     elif int(selected_operation) == 3:
-        # Retrieve users from database matching search criteria
-        print("option 3")
+        #TODO: Ask user for search criteria in CLI with UserInteraction
+        column_name = "name"
+        filter_criteria = "Ola Nordmann"
+        users = get_rows_from_database_matching_condition(TABLE_NAME, 
+                                                          column_name,
+                                                          filter_criteria)
+        for user in users:
+            print(user)
     else:
         # Delete user from database matching criteria
         print("option 4")
