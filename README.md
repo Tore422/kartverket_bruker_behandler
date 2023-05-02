@@ -24,6 +24,6 @@ The user is presented with operations that can be performed
 * Implement code for creating a new user through the CLI
 * Implement code for deleting a user through the CLI
   * Need to search amongst registered users
-* Implement code for searching users matching criteria
-  * Requires implementing code for querying the database for specific rows
+* Implement code for searching users matching multiple criteria
+  * Allow users to supply search criteria through the CLI
   
