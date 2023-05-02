@@ -42,9 +42,9 @@ def get_all_rows_from_database(table_name):
 
 def get_rows_from_database_matching_condition(table_name, column_name,
                                               filter_value):
-    sql = "SELECT * FROM " + table_name + " WHERE " + column_name \
-    + "='" + filter_value + "'"
-    mycursor.execute(sql)
+    sql = "SELECT * FROM " + table_name + " WHERE " + column_name + "= %s"
+    value = (filter_value, )
+    mycursor.execute(sql, value)
     users = mycursor.fetchall()
     return users
     
