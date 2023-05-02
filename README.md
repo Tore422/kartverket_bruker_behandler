@@ -19,9 +19,8 @@ The user is presented with operations that can be performed
 
 ## Todo list
 
-* Connect the program and the database
-  * Need to convert user data to format valid for the database (not just VARCHAR)
-  * Need to retrieve rows from database
+* Need to convert user data to format valid for the database (not just VARCHAR)
+  * Ensure user data is valid, and not a duplicate of an existing user
 * Implement code for creating a new user through the CLI
 * Implement code for deleting a user through the CLI
   * Need to search amongst registered users
