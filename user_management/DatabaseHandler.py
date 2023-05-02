@@ -40,7 +40,14 @@ def get_all_rows_from_database(table_name):
     users = mycursor.fetchall()
     return users
 
-
+def get_rows_from_database_matching_condition(table_name, column_name,
+                                              filter_value):
+    sql = "SELECT * FROM " + table_name + " WHERE " + column_name \
+    + "='" + filter_value + "'"
+    mycursor.execute(sql)
+    users = mycursor.fetchall()
+    return users
+    
 
 
 
@@ -72,16 +79,8 @@ column_value_types = ["INT AUTO_INCREMENT PRIMARY KEY",
                       DATABASE_TYPE_VARCHAR, DATABASE_TYPE_VARCHAR]
 #create_table(table_name, column_names, column_value_types)
 
-user1 = User("John Smith", "01.01.1999", "12 34 56 78", "smith@mymail.com")
-names = ["name", "date_of_birth", "phone_number", "email_address"]
-value_types = ["%s", "%s", "%s", "%s"]
-values = [user1.name, user1.date_of_birth, user1.phone_number, 
-          user1.email_address]
-#insert_into_table("users", names, value_types, values)
 #print(mycursor.rowcount, "record inserted.")
 #print("1 record inserted, ID:", mycursor.lastrowid)
-
-
 
 
 
