@@ -4,6 +4,8 @@
 A simple Python program for managing users through a Command Line Interface (CLI).<br>
 The program interacts with a MySQL database for persistent data storage of registered users.
 
+* The program requires that the the user has installed MySQL,<br>
+  and provides login credentials in DatabaseHandler.py.
 
 ## How to use
 
